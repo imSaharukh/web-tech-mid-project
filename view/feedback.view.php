@@ -14,28 +14,23 @@
 <?php include("navbar.componrnt.html") ?>
 
 
-
+<form action="../controller/updateFeedback.controller.php" method="POST">
 <?php 
 
 foreach($feedback as $user) {
 
-    // echo "<td>".$user['firstName']."</td>";
-    // echo "<td>".$user['lastName']."</td>";
-    // echo "<td>".$user['username']."</td>";
-    // echo "<td>".$user['email']."</td>";
 
     echo "<hr>";
     echo "<h3>Doctor: $user[doctorName]</h3>";
     echo "<h3>Patient: $user[patientName]</h3>";
     echo "<h4>Feedback: $user[feedbackMessage]</h4>";
-    echo "<button type='submit'>✅ checked</button>";
+    echo $user["checked"]? "<button disabled='disabled'>Already Checked</button>"  :"<button name='id' type='submit' value='$user[id]'>✅ checked</button>";
     echo "<hr>";
 
    
 }
-
-
 ?>
-    
+</form>
+
 </body>
 </html>
