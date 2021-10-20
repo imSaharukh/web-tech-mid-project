@@ -12,7 +12,9 @@
     <?php include("../controller/users.controller.php") ?>
     <br>
     <br>
-    <input type="button" value="Add New Admin">
+    <form action="../view/admin-form.html" method="post">
+        <input type="submit" value="Add New Admin">
+    </form>
     <hr>
     <h2>ADMINs</h2>
     <?php
