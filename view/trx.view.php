@@ -14,20 +14,21 @@
     <br>
 
     <?php
-        echo "<table border = 1>";
-        echo  '<th>Patent</th><th>Doctor</th> <th>Fee</th> <th>Date</th>';
+        // echo "<table border = 1>";
+        // echo  '<th>Patent</th><th>Doctor</th> <th>Fee</th> <th>Date</th>';
        foreach($doctorsStat as $user) {
-        echo "<form>";
-        echo "<tr>";
-        echo "<td>".$user['patent']."</td>";
-        echo "<td>".$user['doctor']."</td>";
-        echo "<td>".$user['fee']."</td>";
-        echo "<td>".$user['date']."</td>";
-        echo "</tr>";
-        echo "</form>";
-       
+        echo "<hr>";
+        // echo "<form>";
+        // echo "<tr>";
+        echo "<h3>Patent: ".$user['patent']."</h3>";
+        echo "<h3>Doctor: ".$user['doctor']."</h2>";
+        echo "<h4>Fee: ".$user['fee']."TK</h4>";
+        echo "<h5>DATE: ".$user['date']."</h5>";
+        // echo "</tr>";
+        // echo "</form>";
+        echo "<hr>";
     }
-    echo "</table>";
+    // echo "</table>";
     ?>
 
 

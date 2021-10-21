@@ -38,7 +38,7 @@ if ($isValidate) {
   foreach ($json_a as  $value) {
     if ($value["username"] == $username && $value["password"] == $password) {
       echo "<h1>successfully loggedin</h1> <br>";
-
+      setcookie("user", json_encode($value), time() + (86400 * 30) , "/",); 
       // var_dump($value);
       $isLogin = true;
       break;
@@ -49,7 +49,7 @@ if ($isValidate) {
     echo "username or password is incorrect";
   } else {
     $_SESSION["username"] = $username;
-    setcookie("username", $username, time() + (86400 * 30) , "/",); 
+
     // var_dump($_SESSION);
     header("location: ../view/admin.view.php");
   }
