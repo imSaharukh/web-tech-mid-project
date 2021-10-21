@@ -12,7 +12,7 @@
 
 0. <a href="../view/admin.view.php">Home</a>
 
-1. <a href="home.php">Doctors Statistics</a>2.<a href="../view/trx.view.php">Transaction History </a>3.<a href="feedback.view.php"> Feedbacks</a> 
+1. <a href="../view/doctorstats.view.php">Doctors Statistics</a>2.<a href="../view/trx.view.php">Transaction History </a>3.<a href="feedback.view.php"> Feedbacks</a> 
 <a href="../view/manageUsers.view.php">4. Manage user/s</a> 
 
 

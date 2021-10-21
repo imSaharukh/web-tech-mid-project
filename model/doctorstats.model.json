@@ -1,44 +1,23 @@
 [
     {
-        "patent":"S A SAharukh",
-        "doctor":"Mr X",
-        "fee": 522,
-        "date":"12/12/12"
+        "doctorName":"Mr X",
+        "revenueLastYear":50000,
+        "revenueLastMounth":40000,
+        "totalPatentVisit":100
+
     },
     {
-        "patent":"S A Harukh",
-        "doctor":"Mr X",
-        "fee": 522,
-        "date":"12/12/12"
+        "doctorName":"Mr Y",
+        "revenueLastYear":50000,
+        "revenueLastMounth":40000,
+        "totalPatentVisit":100
+
     },
     {
-        "patent":"S A Harukh",
-        "doctor":"Mr X",
-        "fee": 522,
-        "date":"12/12/12"
-    },
-    {
-        "patent":"S A Harukh",
-        "doctor":"Mr X",
-        "fee": 522,
-        "date":"12/12/12"
-    },
-    {
-        "patent":"S A Harukh",
-        "doctor":"Mr X",
-        "fee": 522,
-        "date":"12/12/12"
-    },
-    {
-        "patent":"S A Harukh",
-        "doctor":"Mr X",
-        "fee": 522,
-        "date":"12/12/12"
-    },
-    {
-        "patent":"S A Harukh",
-        "doctor":"Mr X",
-        "fee": 522,
-        "date":"12/12/12"
+        "doctorName":"Mr Z",
+        "revenueLastYear":50000,
+        "revenueLastMounth":40000,
+        "totalPatentVisit":100
+
     }
 ]

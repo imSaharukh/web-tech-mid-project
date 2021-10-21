@@ -9,7 +9,7 @@
 <body>
 <h1>[Doctor Statostics]</h1>
     <?php include("navbar.componrnt.php") ?>
-    <?php require("../controller/doctorstats.controller.php") ?>
+    <?php require("../controller/trx.controller.php") ?>
     <br>
     <br>
 
