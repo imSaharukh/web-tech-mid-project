@@ -13,7 +13,7 @@
    
     <h1>Admin Home</h1>
     <h2>Welcome <?php echo $_SESSION['username']; ?></h2>
- <?php include("navbar.componrnt.html") ?>
+ <?php include("navbar.componrnt.php") ?>
 </body>
 
 </html>

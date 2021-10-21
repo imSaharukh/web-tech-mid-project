@@ -8,7 +8,7 @@
 </head>
 <body>
     <h1>[Users]</h1>
-    <?php include("navbar.componrnt.html") ?>
+    <?php include("navbar.componrnt.php") ?>
     <?php include("../controller/users.controller.php") ?>
     <br>
     <br>

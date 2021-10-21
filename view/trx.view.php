@@ -8,7 +8,7 @@
 </head>
 <body>
 <h1>[Doctor Statostics]</h1>
-    <?php include("navbar.componrnt.html") ?>
+    <?php include("navbar.componrnt.php") ?>
     <?php require("../controller/doctorstats.controller.php") ?>
     <br>
     <br>

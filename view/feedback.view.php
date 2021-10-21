@@ -11,7 +11,7 @@
 <body>
 
 <h1>[Feedbacks]</h1>
-<?php include("navbar.componrnt.html") ?>
+<?php include("navbar.componrnt.php") ?>
 
 
 <form action="../controller/updateFeedback.controller.php" method="POST">

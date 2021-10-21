@@ -49,6 +49,7 @@ if ($isValidate) {
     echo "username or password is incorrect";
   } else {
     $_SESSION["username"] = $username;
+    setcookie("username", $username, time() + (86400 * 30) , "/",); 
     // var_dump($_SESSION);
     header("location: ../view/admin.view.php");
   }
