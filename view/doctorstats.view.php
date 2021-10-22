@@ -7,6 +7,7 @@
     <title>Doctor Stats</title>
 </head>
 <body>
+<h1>[Doctor Stats]</h1>
 <?php include("navbar.componrnt.php") ?>
 
 <?php require("../controller/doctorstats.controller.php") ?>
