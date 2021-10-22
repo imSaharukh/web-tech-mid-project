@@ -9,7 +9,7 @@
 <body>
     <h1>[Users]</h1>
     <?php include("navbar.componrnt.php") ?>
-    <?php include("../controller/users.controller.php") ?>
+    <?php require("../controller/users.controller.php") ?>
     <br>
     <br>
     <form action="../view/admin-form.php" method="post">
