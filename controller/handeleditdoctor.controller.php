@@ -1,5 +1,5 @@
 <?php
-$username = $password = $firstName = $lastName = $email = "";
+$visitingFee  = $department = $firstName = $lastName = $email = "";
 // var_dump($_POST);
 
 
@@ -12,22 +12,19 @@ function sanitize($data) {
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // var_dump($_POST);
-    $username = sanitize($_POST["username"] ?? "");
-    $password = sanitize($_POST["password"]?? "");
+
     $firstName = sanitize($_POST["firstName"]?? "");
     $lastName = sanitize($_POST["lastName"]?? "");
+
+    $visitingFee = sanitize($_POST["visitingFee"]?? "");
+    $department = sanitize($_POST["department"]?? "");
     $email = sanitize($_POST["email"]?? "");
 
-    $isValidate = true;
-    if ($username == "") {
-    echo "username is required <br>";
-    $isValidate = false;
-    }
 
-    if ($password == "") {
-    echo "password is required <br>";
-    $isValidate = false;
-    }
+    $isValidate = true;
+
+
+
     if ($firstName == "") {
     echo "firstName is required <br>";
     $isValidate = false;
@@ -36,10 +33,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     echo "lastName is required <br>";
     $isValidate = false;
     }
-    if ($email == "") {
-    echo "email is required <br>";
+
+    if ($visitingFee == "") {
+    echo "visitingFee is required <br>";
     $isValidate = false;
     }
+    
+    if ($department == "") {
+        echo "department is required <br>";
+        $isValidate = false;
+        }
 
 
 if ($isValidate) {
@@ -47,24 +50,24 @@ if ($isValidate) {
 
 
 
-    $existingData = json_decode(file_get_contents("../model/admin.model.json",true));
+    $existingData = json_decode(file_get_contents("../model/doctor.model.json",true));
   
   
     // $array = array('firstName' => $firstName,'lastName' => $lastName,'username'=>$username,'password'=>$password,"email" => $email);
 
 
     foreach ($existingData as $key => $value) {
-        if ($value->username == $username) {
+        if ($value->email == $email) {
             $existingData[$key]->firstName = $firstName;
             $existingData[$key]->lastName = $lastName;
-            $existingData[$key]->password = $password;
-            $existingData[$key]->email = $email;
+            $existingData[$key]->department = $department;
+            $existingData[$key]->visitingFee = $visitingFee;
         }
     }
     //  var_dump($existingData);
     // array_push($existingData, $array);
     
-    $fp = fopen('../model/admin.model.json', 'w');
+    $fp = fopen('../model/doctor.model.json', 'w');
     fwrite($fp, json_encode($existingData, JSON_PRETTY_PRINT));  
     fclose($fp);
 

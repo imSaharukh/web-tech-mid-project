@@ -15,8 +15,7 @@
         "passing year": "1997",
         "university": "dhaka",
         "department": "Paediatric",
-        "visitingFee":"1400"
-
+        "visitingFee": "1400"
     },
     {
         "firstName": "Md",
@@ -35,7 +34,6 @@
         "university": "dhaka",
         "department": "Nephrology",
         "visitingFee": "1200"
-
     },
     {
         "firstName": "Junayed",
@@ -163,5 +161,4 @@
         "department": "Physiology",
         "visitingFee": "1200"
     }
-
 ]
