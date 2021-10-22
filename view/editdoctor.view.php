@@ -45,6 +45,6 @@
 
 
 
-    
+    <?php include ('../view/footer.php'); ?>
 </body>
 </html>

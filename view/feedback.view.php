@@ -31,6 +31,6 @@ foreach($feedback as $user) {
 }
 ?>
 </form>
-
+<?php include ('../view/footer.php'); ?>
 </body>
 </html>

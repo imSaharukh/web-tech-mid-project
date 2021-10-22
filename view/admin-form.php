@@ -24,5 +24,8 @@
         </fieldset><br>
         <input type="submit" value="Confirm">
     </form>
+
+<?php include ('../view/footer.php'); ?>
+
 </body>
 </html>

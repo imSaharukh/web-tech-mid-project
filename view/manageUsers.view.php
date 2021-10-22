@@ -12,7 +12,7 @@
     <?php include("../controller/users.controller.php") ?>
     <br>
     <br>
-    <form action="../view/admin-form.html" method="post">
+    <form action="../view/admin-form.php" method="post">
         <input type="submit" value="Add New Admin">
     </form>
     <hr>
@@ -114,6 +114,6 @@
             ?>
 
 
-   
+<?php include ('../view/footer.php'); ?>
 </body>
 </html>

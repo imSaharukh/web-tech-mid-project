@@ -31,6 +31,6 @@
     // echo "</table>";
     ?>
 
-
+<?php include ('../view/footer.php'); ?>
 </body>
 </html>

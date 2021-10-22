@@ -30,6 +30,6 @@ foreach ($doctorstats as $key => $value) {
 
 
 ?>
-    
+    <?php include ('../view/footer.php'); ?>
 </body>
 </html>
