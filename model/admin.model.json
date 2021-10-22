@@ -1,44 +1,44 @@
 [
     {
-        "firstName": "S A",
-        "lastName": "Saharukh",
+        "firstName": "S A test",
+        "lastName": "Saharukh 2",
         "username": "imSaharukh",
         "password": "password",
-        "email": "sasaharukh@gmail.com"
+        "email": "sasaharukh1@gmail.com"
     },
     {
         "firstName": "S A",
         "lastName": "Saharukh12",
-        "username": "imSaharukh",
+        "username": "imSaharukh5",
         "password": "password",
-        "email": "sasaharukh@gmail.com"
+        "email": "sasaharukh2@gmail.com"
     },
     {
         "firstName": "S A",
         "lastName": "Saharukh12",
-        "username": "imSaharukh",
+        "username": "imSaharukh4",
         "password": "password",
-        "email": "sasaharukh@gmail.com"
+        "email": "sasaharukh3@gmail.com"
     },
     {
         "firstName": "S A",
         "lastName": "Saharukh12",
-        "username": "imSaharukh",
+        "username": "imSaharukh3",
         "password": "password",
-        "email": "sasaharukh@gmail.com"
+        "email": "sasaharukh4@gmail.com"
     },
     {
         "firstName": "S A",
         "lastName": "Saharukh12",
-        "username": "imSaharukh",
+        "username": "imSaharukh2",
         "password": "password",
-        "email": "sasaharukh@gmail.com"
+        "email": "sasaharukh5@gmail.com"
     },
     {
         "firstName": "S A",
         "lastName": "Saharukh12",
-        "username": "imSaharukh",
+        "username": "imSaharukh1",
         "password": "password",
-        "email": "sasaharukh@gmail.com"
+        "email": "sasaharukh6@gmail.com"
     }
 ]

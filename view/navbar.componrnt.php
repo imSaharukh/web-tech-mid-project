@@ -7,7 +7,7 @@
 // }
 ?>
 
-<h2>Welcome <?php echo $_SESSION['username']; ?></h2>
+<h2>loggedin as, <?php echo $_SESSION['username']; ?></h2>
 
 
 0. <a href="../view/admin.view.php">Home</a>

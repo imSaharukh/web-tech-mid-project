@@ -17,26 +17,28 @@
     </form>
     <hr>
     <h2>ADMINs</h2>
+
+    <form action="editadmin.view.php" method="post">
     <?php
     echo "<table border = 1>";
     echo  '<th>Fist Name</th><th>Last Name</th> <th>username</th> <th>Email</th>';
     foreach($adminData as $user) {
-        echo "<form>";
+        // echo "<form>";
         echo "<tr>";
         echo "<td>".$user['firstName']."</td>";
         echo "<td>".$user['lastName']."</td>";
         echo "<td>".$user['username']."</td>";
         echo "<td>".$user['email']."</td>";
         $email = $user['email'];
-        echo "<td> <button type='submit' value='$email'> edit</button> </td>";
+        echo "<td> <button type='submit' value='$email' name='email'> edit</button> </td>";
         echo "</tr>";
-        echo "</form>";
+        // echo "</form>";
        
     }
     
     echo "</table>";
         ?>
-
+    </form>
     <h2>Doctors</h2>
         <?php
         echo "<table border = 1>";
