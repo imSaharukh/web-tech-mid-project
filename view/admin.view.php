@@ -43,6 +43,7 @@
   <input type="submit" value="Update">
 </form>
 
+<?php include ('../view/footer.php'); ?>
 </body>
 
 </html>

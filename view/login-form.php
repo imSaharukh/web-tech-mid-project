@@ -1,3 +1,15 @@
+<?php
+session_start();
+if (isset($_SESSION["username"] )) {
+    # code...
+    header("location: ../view/admin.view.php");
+}
+
+// var_dump($_SESSION);
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>

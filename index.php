@@ -12,7 +12,7 @@
     <?php
     //redirect to login page
     // if(isset($_SESSION['user_id'])){
-    header("Location: view/login-form.html");
+    header("Location: view/login-form.php");
     // }
 
     ?>

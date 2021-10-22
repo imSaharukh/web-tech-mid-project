@@ -57,7 +57,7 @@ if($updated){
     fwrite($fp, json_encode($existingData, JSON_PRETTY_PRINT));  
     fclose($fp);
     echo "Password Updated redirecteing to login page";
-    header("refresh:3; url= ../view/login-form.html");
+    header("refresh:3; url= ../view/login-form.php");
 }else{
     echo "Email not found";
 
