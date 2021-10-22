@@ -18,12 +18,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     $visitingFee = sanitize($_POST["visitingFee"]?? "");
     $department = sanitize($_POST["department"]?? "");
-    $email = sanitize($_POST["email"]?? "");
+    $email = ($_POST["email"]?? "");
 
 
     $isValidate = true;
 
-
+    var_dump($_POST);
 
     if ($firstName == "") {
     echo "firstName is required <br>";
@@ -43,6 +43,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         echo "department is required <br>";
         $isValidate = false;
         }
+    
+    if ($email == "") {
+        echo "email is required <br>";
+        $isValidate = false;
+        }
 
 
 if ($isValidate) {
@@ -58,6 +63,7 @@ if ($isValidate) {
 
     foreach ($existingData as $key => $value) {
         if ($value->email == $email) {
+            echo "updated";
             $existingData[$key]->firstName = $firstName;
             $existingData[$key]->lastName = $lastName;
             $existingData[$key]->department = $department;

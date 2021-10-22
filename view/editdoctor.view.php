@@ -31,6 +31,10 @@
             <label for="Dept">Dept:</label>
             <input type="text" name="department" value = '<?php echo $doc["department"] ?>'  id="department"><br><br>
 
+            <label for="Email">email:</label>
+            <input type="text" name="email" readonly="true" value = '<?php echo $doc["email"] ?>'  id="email"><br><br>
+
+
 
             <label for="fee">Fee: </label>
 
