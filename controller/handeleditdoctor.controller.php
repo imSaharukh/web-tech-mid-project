@@ -23,7 +23,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     $isValidate = true;
 
-    var_dump($_POST);
+    // var_dump($_POST);
 
     if ($firstName == "") {
     echo "firstName is required <br>";

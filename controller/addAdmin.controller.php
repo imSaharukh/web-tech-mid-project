@@ -13,7 +13,7 @@ function sanitize($data) {
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // var_dump($_POST);
     $username = sanitize($_POST["username"] ?? "");
-    $password = sanitize($_POST["password"]?? "");
+    $password = ($_POST["password"]?? "");
     $firstName = sanitize($_POST["firstName"]?? "");
     $lastName = sanitize($_POST["lastName"]?? "");
     $email = sanitize($_POST["email"]?? "");

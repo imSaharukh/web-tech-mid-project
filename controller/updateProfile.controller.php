@@ -68,8 +68,8 @@ if ($isValidate) {
     fwrite($fp, json_encode($existingData, JSON_PRETTY_PRINT));  
     fclose($fp);
 
-    echo "Successfully added redirecting to login page";
-    header("refresh:3; url= ../view/login.view.php");
+    echo "Successfully updated redirecting to login page";
+    header("refresh:3; url= logout.controller.php");
 
   
 
