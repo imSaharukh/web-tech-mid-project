@@ -8,8 +8,6 @@ if (isset($_SESSION["username"] )) {
 // var_dump($_SESSION);
 
 ?>
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>

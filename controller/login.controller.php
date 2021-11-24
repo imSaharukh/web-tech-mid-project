@@ -29,28 +29,64 @@ if ($password == "") {
 }
 
 if ($isValidate) {
+  require("../model/db.php") ;
 
-  $string = file_get_contents("../model/admin.model.json");
-  $json_a = json_decode($string, true);
-  // var_dump($json_a);
-  $isLogin = false;
-  // var_dump($json_a["password"]);
-  foreach ($json_a as  $value) {
-    if ($value["username"] == $username && $value["password"] == $password) {
-      echo "<h1>successfully loggedin</h1> <br>";
-      setcookie("user", json_encode($value), time() + (86400 * 30) , "/",); 
-      // var_dump($value);
-      $isLogin = true;
-      break;
-    }
-  }
+    $sql = "SELECT * FROM admin where username = ? and password = ?";
 
-  if (!$isLogin) {
-    echo "username or password is incorrect";
-  } else {
-    $_SESSION["username"] = $username;
+    $stmt = $conn->prepare($sql);
+    $stmt->bind_param('ss', $username, $password);
 
-    // var_dump($_SESSION);
+
+    $stmt->execute();
+    $result = $stmt->get_result();
+    $isLogin = false;
+    if ($result->num_rows > 0) {
+    echo "Login Successful <br>";
+
+    $user = $result->fetch_assoc();
+
+
+    echo "<h1>successfully loggedin</h1> <br>";
+    setcookie("user", json_encode($value), time() + (86400 * 30) , "/",); 
+    // var_dump($value);
+    $_SESSION["username"] = $user['username'];
+
+
     header("location: ../view/admin.view.php");
-  }
+
+
+    }else{
+      echo "username or password is incorrect";
+    }
+    $conn->close();
+
+
+
+
+
+
+
+  // $string = file_get_contents("../model/admin.model.json");
+  // $json_a = json_decode($string, true);
+  // // var_dump($json_a);
+  // $isLogin = false;
+  // // var_dump($json_a["password"]);
+  // foreach ($json_a as  $value) {
+  //   if ($value["username"] == $username && $value["password"] == $password) {
+  //     echo "<h1>successfully loggedin</h1> <br>";
+  //     setcookie("user", json_encode($value), time() + (86400 * 30) , "/",); 
+  //     // var_dump($value);
+  //     $isLogin = true;
+  //     break;
+  //   }
+  // }
+
+  // if (!$isLogin) {
+  //   echo "username or password is incorrect";
+  // } else {
+  //   $_SESSION["username"] = $username;
+
+
+  //   header("location: ../view/admin.view.php");
+  // }
 }

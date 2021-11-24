@@ -4,7 +4,7 @@
         "doctorName": "Junayed Khan (Physiology)",
         "feedbackMessage": "Highly skilled. But too much dirty minded. Luiccha...",
         "id": "1",
-        "checked": false
+        "checked": true
     },
     {
         "patientName": "Jackson, Mr",
@@ -18,7 +18,7 @@
         "doctorName": "Md Shajib (Nephrology)",
         "feedbackMessage": "Soooo goood and tender. spicy juciy..",
         "id": "3",
-        "checked": false
+        "checked": true
     },
     {
         "patientName": "Zayn, Arian",
