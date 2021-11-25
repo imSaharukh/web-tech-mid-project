@@ -7,7 +7,7 @@
 // }
 ?>
 
-<h2>loggedin as, <?php echo $_SESSION['username']; ?></h2>
+<!-- <h2>loggedin as, <?php echo $_SESSION['username']; ?></h2> -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 <link rel="stylesheet" href="./css/header.css">
 <!-- <p style="display:inline;"><h3 style="float: left;"> </h3></p>
@@ -43,25 +43,22 @@
 		</li> -->
 		<li class="nav-bar_item"><a href="feedback.view.php"> Feedbacks</a></li>
 		<li class="nav-bar_item"><a href="../view/manageUsers.view.php">Manage user/s</a> </li>
-		<li class="nav-bar_item"><a href="../view/admin.view.php">Prodile</a> </li>
+		<li class="nav-bar_item"><a href="../view/admin.view.php"><?php echo $_SESSION['username']; ?></a> </li>
+		<li class="nav-bar_item"><a href="../controller/logout.controller.php">Logout</a> </li>
 	</ul>
 </nav> 
 
 
 
 
-1. <a href="../view/doctorstats.view.php">Doctors Statistics</a>2.<a href="../view/trx.view.php">Transaction History </a>3.<a href="feedback.view.php"> Feedbacks</a> 
-<a href="../view/manageUsers.view.php">4. Manage user/s</a> 
-
-<a href="../view/salesreport.view.php">5. Seals Report</a> 
-
-<a href="../view/admin.view.php">6. Prodile</a>
 
 
-<form method="post" action="../controller/logout.controller.php">
+
+
+<!-- <form method="post" action="../controller/logout.controller.php">
       
     <input type="submit" name="logout"
             value="logout"/>
-</form>
+</form> -->
 
 <!-- 5. <a href="logout.php">Logout</a> -->

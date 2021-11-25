@@ -102,6 +102,16 @@
     color: #fff;
     text-transform: uppercase;
   }
+
+
+  .navbarbutton {
+    position: relative;
+    display: block;
+    padding-bottom: 5px;
+    text-decoration: none;
+    color: #fff;
+    text-transform: uppercase;
+  }
   nav .nav-bar .nav-bar_item a:after {
     content: "";
     position: absolute;
