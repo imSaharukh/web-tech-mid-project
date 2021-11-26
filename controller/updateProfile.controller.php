@@ -11,12 +11,19 @@ function sanitize($data) {
 }
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
+
+    // takes raw data from the request 
+    $json = file_get_contents('php://input');
+    // Converts it into a PHP object 
+    $data = json_decode($json, true);
+    // var_dump($data);
+
     // var_dump($_POST);
-    $username = sanitize($_POST["username"] ?? "");
-    $password = sanitize($_POST["password"]?? "");
-    $firstName = sanitize($_POST["firstName"]?? "");
-    $lastName = sanitize($_POST["lastName"]?? "");
-    $email = sanitize($_POST["email"]?? "");
+    $username = sanitize($data["username"] ?? "");
+    $password = sanitize($data["password"]?? "");
+    $firstName = sanitize($data["firstName"]?? "");
+    $lastName = sanitize($data["lastName"]?? "");
+    $email = sanitize($data["email"]?? "");
 
     $isValidate = true;
     if ($username == "") {
@@ -49,8 +56,6 @@ if ($isValidate) {
 
     $existingData = json_decode(file_get_contents("../model/admin.model.json",true));
   
-  
-    // $array = array('firstName' => $firstName,'lastName' => $lastName,'username'=>$username,'password'=>$password,"email" => $email);
 
 
     foreach ($existingData as $key => $value) {
@@ -68,8 +73,8 @@ if ($isValidate) {
     fwrite($fp, json_encode($existingData, JSON_PRETTY_PRINT));  
     fclose($fp);
 
-    echo "Successfully updated redirecting to login page";
-    header("refresh:3; url= logout.controller.php");
+    echo "success";
+    // header("refresh:3; url= logout.controller.php");
 
   
 
