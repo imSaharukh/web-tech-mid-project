@@ -38,7 +38,7 @@ if ($password == "") {
 }
 
 if ($isValidate) {
-  require("../model/db.php") ;
+  require("../model/db.php");
 
     $sql = "SELECT * FROM admin where username = ? and password = ?";
 

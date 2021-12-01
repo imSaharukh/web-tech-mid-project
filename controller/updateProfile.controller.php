@@ -12,10 +12,14 @@ function sanitize($data) {
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
+    require("../model/db.php");
+
     // takes raw data from the request 
     $json = file_get_contents('php://input');
     // Converts it into a PHP object 
     $data = json_decode($json, true);
+
+    // echo $json["username"];
     // var_dump($data);
 
     // var_dump($_POST);
@@ -51,45 +55,32 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 if ($isValidate) {
 
-
-
-
-    $existingData = json_decode(file_get_contents("../model/admin.model.json",true));
-  
-
-
-    foreach ($existingData as $key => $value) {
-        if ($value->username == $username) {
-            $existingData[$key]->firstName = $firstName;
-            $existingData[$key]->lastName = $lastName;
-            $existingData[$key]->password = $password;
-            $existingData[$key]->email = $email;
-        }
-    }
-    //  var_dump($existingData);
-    // array_push($existingData, $array);
-    
-    $fp = fopen('../model/admin.model.json', 'w');
-    fwrite($fp, json_encode($existingData, JSON_PRETTY_PRINT));  
-    fclose($fp);
-
+    //update to database prepare statement
+    $sql = "UPDATE admin SET username = ?, password = ?, firstName = ?, lastName = ? WHERE email = ?";
+    $stmt = $conn->prepare($sql);
+    $stmt->bind_param("sssss", $username, $password, $firstName, $lastName, $email);
+    $stmt->execute();
+    $stmt->close();
+    $conn->close();
     echo "success";
-    // header("refresh:3; url= logout.controller.php");
 
   
 
 
 
 
-}else{
+}
+else{
     echo "Please fill all the fields";
-      // sleep(2);
+    // sleep(2);
     // header("Location: ../view/admin.view.php");
 
 }
-}else{
+}
+else
+{
     header("Location: ../index.php");
-    }
+}
 
 
 ?>

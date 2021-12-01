@@ -6,22 +6,19 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
+    <link rel="stylesheet" href="css/common.css">
 </head>
 
 <body>
     <?php require("../controller/adminHome.controller.php") ?>
-   
-    <!-- <h1>Admin Home</h1> -->
-    <!-- <h2>Welcome <?php echo $_SESSION['username']; ?></h2> -->
- <?php include("navbar.componrnt.php") ?>
 
- <?php 
-  $user =  json_decode($_COOKIE["user"]);
-//   echo $user->username;
+    <?php include("navbar.componrnt.php") ?>
+
+    <?php 
+      $user =  json_decode($_COOKIE["user"]);
   
   ?>
     <br>
-<!-- <form action="../controller/updateProfile.controller.php" method="post" onsubmit="update(this); return false;"> -->
 
 <label for="fname">First name:</label><br>
   <input type="text" id="fname" name="firstName" value = '<?php echo $user->firstName;?>'><br>
@@ -40,12 +37,12 @@
   <label for="lname">password:</label><br>
   <input type="password" id="password" name="password" value = '<?php echo $user->password;?>'><br><br>
   
-  <button onclick="update()" >Submit</button>
-  <!-- <input type="submit" value="Update"> -->
-<!-- </form> -->
+  <button class="button" onclick="update()" >Submit</button>
+
 
 <?php include ('../view/footer.php'); ?>
 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
 <script src="js/request.js"></script>
 
@@ -53,21 +50,44 @@
 function update() {
   //TODO validation
   // console.log("update called");
-  postRequest("../controller/updateProfile.controller.php", {
-    firstName: document.getElementById("fname").value,
-    lastName: document.getElementById("lname").value,
-    email: document.getElementById("email").value,
-    username: document.getElementById("username").value,
-    password: document.getElementById("password").value
-  },function fun(data) {
+  var data = {
+    firstName: $("#fname").val(),
+    lastName: $("#lname").val(),
+    email: $("#email").val(),
+    username: $("#username").val(),
+    password: $("#password").val()
+  };
+  data  = JSON.stringify(data);
+
+  const url = "../controller/updateProfile.controller.php";
+  const request = $.post(url, data, function fun(data) {
     if (data == "success") {
-      console.log("successssss");
+      // console.log("successssss");
+      window.location.replace("../controller/logout.controller.php");
+
     } else {
-      console.log("failed");
+      console.log(data);
     }
   });
+
+
+
+  // postRequest("../controller/updateProfile.controller.php", {
+  //   firstName: document.getElementById("fname").value,
+  //   lastName: document.getElementById("lname").value,
+  //   email: document.getElementById("email").value,
+  //   username: document.getElementById("username").value,
+  //   password: document.getElementById("password").value
+  // },function fun(data) {
+  //   if (data == "success") {
+  //     // console.log("successssss");
+  //     window.location.replace("../controller/logout.controller.php");
+
+  //   } else {
+  //     console.log("failed");
+  //   }
+  // });
   
-  // return false;
 
 }
 
