@@ -1,47 +1,36 @@
 <?php
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // $id = validate($_POST["username"]);
-    // $password = validate($_POST["password"]);
-    // var_dump($_POST);
 
-    $existingData = json_decode(file_get_contents("../model/feedback.model.json",true),true);
-      $updated = false;
-    foreach($existingData as $feedback => $x){
-        if($x["id"] == $_POST["id"]) {
-            echo "found";
+  include("../model/db.php");
 
-            // $existingData[$x]["checked"] = true;
-            //update the checked value
-            $existingData[$feedback]["checked"] = true;
-            
-            $updated = true;
-            break;
+
+
+    //get post request
+    $json = file_get_contents('php://input');
+      // Converts it into a PHP object 
+    $data = json_decode($json, true);
+
+    if(!isset($data["id"])){
+        echo "id is not set";
     }
+    // echo $data["id"];
 
- 
+    //update feedback in the database with prepared statement
+    $sql = "UPDATE feedback SET checked = 1 WHERE id = ?";
+    $stmt = $conn->prepare($sql);
+    $stmt->bind_param("i", $data["id"]);
+    $stmt->execute();
+    $stmt->close();
+    $conn->close();
 
+    echo "success";
+}
+else{
+    echo "error";
 }
 
 
-var_dump($existingData);
-$fp = fopen('../model/feedback.model.json', 'w');
-fwrite($fp, json_encode($existingData, JSON_PRETTY_PRINT));  
-fclose($fp);
 
-if($updated){
-    header("Location: ../view/feedback.view.php");
-}else{
-    echo "Error";
-
-}
-    // array_push($existingData, $array);
-    
-
-
-
-  }else{
-    header("Location: ../../index.php");
-  }
 
 ?>

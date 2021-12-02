@@ -20,5 +20,40 @@
         "email": "abcx@gmail.com",
         "password": "1234",
         "userRole": "patients"
+    },
+    {
+        "firstName": "Mis",
+        "lastName": "Anika",
+        "age": "40",
+        "gender": "female",
+        "address": "1680 Berkley Street",
+        "phone": "012348888",
+        "email": "abcx@gmail.com",
+        "password": "1234",
+        "userRole": "patients"
+    },
+    {
+        "firstName": "Mr",
+        "lastName": "Jackson",
+        "age": "48",
+        "gender": "female",
+        "address": "1680 Berkley Street",
+        "phone": "012348888",
+        "email": "abcx@gmail.com",
+        "password": "1234",
+        "userRole": "patients"
+    },
+    {
+        "firstName": "Mr",
+        "lastName": "Jackson",
+        "age": "48",
+        "gender": "female",
+        "address": "1680 Berkley Street",
+        "phone": "012348888",
+        "email": "abcx@gmail.com",
+        "password": "1234",
+        "userRole": "patients"
     }
+    
+
 ]

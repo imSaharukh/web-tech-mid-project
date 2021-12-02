@@ -7,7 +7,7 @@
     <title>Doctor Statistics</title>
 </head>
 <body>
-<h1>[Doctor Statostics]</h1>
+<!-- <h1>[Doctor Statostics]</h1> -->
     <?php include("navbar.componrnt.php") ?>
     <?php require("../controller/trx.controller.php") ?>
     <br>

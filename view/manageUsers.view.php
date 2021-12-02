@@ -7,7 +7,7 @@
     <title>Users</title>
 </head>
 <body>
-    <h1>[Users]</h1>
+    <!-- <h1>[Users]</h1> -->
     <?php include("navbar.componrnt.php") ?>
     <?php require("../controller/users.controller.php") ?>
     <br>

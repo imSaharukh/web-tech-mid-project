@@ -62,11 +62,11 @@ function update() {
   const url = "../controller/updateProfile.controller.php";
   const request = $.post(url, data, function fun(data) {
     if (data == "success") {
-      // console.log("successssss");
       window.location.replace("../controller/logout.controller.php");
 
     } else {
       console.log(data);
+      alart(data);
     }
   });
 
