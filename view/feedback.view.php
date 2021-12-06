@@ -29,14 +29,16 @@
         console.log(data);
         $.each(data, function(index, value){
             $("#feedback").append(`
-                <hr>
-                <h3>Doctor: ${value.doctorName}</h3>
-                <h3>Patient: ${value.patientName}</h3>
-                <h4>Feedback: ${value.feedback}</h4>
-                <button class = "button" onclick="updateFeedback(${value.id});">Checked</button>
+            <div class="container">
+            <img src="https://i.pravatar.cc/100" alt="Avatar" style="width:90px">
+            <p><span>Doctor: ${value.doctorName}</span> Patient: ${value.patientName}</p>
+            <p>Feedback: ${value.feedback}</p>
+            <button style="display: flex;${value.checked == 1? 'background-color:red;' : ''}" ${value.checked == 1? 'disabled' : ''} class = "button" onclick="updateFeedback(${value.id});">Checked</button>
+            </div>
                 `)
     });}
     );
+
 
 
 

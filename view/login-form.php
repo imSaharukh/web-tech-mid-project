@@ -15,14 +15,15 @@ if (isset($_SESSION["username"] )) {
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LOGIN</title>
+    <link rel="stylesheet" href="css/input.css">
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/auth.css">
 </head>
-<body>
-<!-- <form action="../controller/login.controller.php" method="POST" style="display: inline-block;">   -->
-    <h1>Admin Login</h1>
-    <fieldset>
-        <legend>Login:</legend>
+<body id = "center">
 
-        <label for="email">Username:</label><br>
+    <h1>Admin Login</h1>
+
+ <div class = "inputDiv">       <label for="email">Username:</label><br>
         <input type="text" id="username" name="username" >
        
             </input><br>
@@ -31,36 +32,43 @@ if (isset($_SESSION["username"] )) {
        <br> <label for="password">password:</label><br>
         <input type="password" id="password" name="password" >
     
-            </input><br>
+            </input><br></div>
 
-      </fieldset> 
       <br>
 
-      <button onclick="login()">Login</button>
-      <!-- <input type="submit" value="Login"> -->
+      <button class="button" style="width: 100%;" onclick="login()">Login</button>
       
       <br>
         <br>
       <a href="forget-password.html">forgot password?</a>
 
-    <!-- </form> -->
+
     <script>
     function login() {
 
-        // console.log();
 
         const username = document.getElementById('username').value;
         const password = document.getElementById('password').value;
 
-
-        if (username == "" || password == "") {
-            alert("Please fill all the fields");
+        let message = "";
+        var verified = true;
+        // if (username == "" || password == "") {
+        //     alert("Please fill all the fields");
+        //     return false;
+        // }
+        if(username == ""){
+            message += "Please enter your username \n";
+            verified = false;
+        }
+        if(password == ""){
+            message += "Please enter your password";
+            verified = false;
+        }
+        if(!verified){
+            alert(message);
             return false;
         }
 
-
-        // console.log(username);
-        // console.log(password);
 
         const xhttp = new XMLHttpRequest();
         xhttp.onload = function() {

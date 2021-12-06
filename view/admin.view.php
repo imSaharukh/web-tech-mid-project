@@ -7,6 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
     <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/input.css">
+    <link rel="stylesheet" href="css/auth.css">
 </head>
 
 <body>
@@ -20,6 +22,7 @@
   ?>
     <br>
 
+<div class "inputDiv center" style="padding: 3% 30%;">
 <label for="fname">First name:</label><br>
   <input type="text" id="fname" name="firstName" value = '<?php echo $user->firstName;?>'><br>
   <label for="lname">Last name:</label><br>
@@ -39,6 +42,8 @@
   
   <button class="button" onclick="update()" >Submit</button>
 
+
+</div>
 
 <?php include ('../view/footer.php'); ?>
 

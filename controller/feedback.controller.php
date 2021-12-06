@@ -20,7 +20,8 @@
                 "id" => $row["id"],
                 "feedback" => $row["feedbackMessage"],
                 "doctorName" => $row["doctorName"],
-                "patientName" => $row["patientName"]
+                "patientName" => $row["patientName"],
+                "checked" => $row["checked"],
             );
             array_push($feedbacks, $feedback);
         }
