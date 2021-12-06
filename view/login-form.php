@@ -52,10 +52,6 @@ if (isset($_SESSION["username"] )) {
 
         let message = "";
         var verified = true;
-        // if (username == "" || password == "") {
-        //     alert("Please fill all the fields");
-        //     return false;
-        // }
         if(username == ""){
             message += "Please enter your username \n";
             verified = false;

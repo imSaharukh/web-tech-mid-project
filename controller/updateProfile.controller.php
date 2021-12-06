@@ -27,7 +27,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $password = sanitize($data["password"]?? "");
     $firstName = sanitize($data["firstName"]?? "");
     $lastName = sanitize($data["lastName"]?? "");
-    $email = sanitize($data["email"]?? "");
+    $user =  json_decode($_COOKIE["user"]);
+    $email = $user->email ?? "";
 
     $isValidate = true;
     if ($username == "") {

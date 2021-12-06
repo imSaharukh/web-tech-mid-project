@@ -31,7 +31,7 @@
   <!-- <?php echo $username=  $user->username;?> -->
 
   <label for="lname">Email:</label><br>
-  <input type="text" id="email" name="email" value = '<?php echo $user->email;?>' ><br>
+  <input type="text" id="email" name="email" value = '<?php echo $user->email;?>' readonly><br>
 
   <label for="lname">username:</label><br>
   <input type="text" id="username" name="username" value = '<?php echo $user->username;?>'><br>
@@ -55,6 +55,33 @@
 function update() {
   //TODO validation
   // console.log("update called");
+
+  let message = "";
+        var verified = true;
+        if($("#fname").val() == ""){
+            message += "First Name is required \n";
+            verified = false;
+        }
+        if($("#lname").val() == ""){
+            message += "Last Name is required \n";
+            verified = false;
+        }
+        if($("#email").val() == ""){
+            message += "Email is required \n";
+            verified = false;
+        }
+        if($("#username").val() == ""){
+            message += "Username is required \n";
+            verified = false;
+        }
+        if($("#password").val() == ""){
+            message += "Password is required \n";
+            verified = false;
+        }
+        if (!verified) {
+          return alert(message);
+        }
+
   var data = {
     firstName: $("#fname").val(),
     lastName: $("#lname").val(),
@@ -75,23 +102,6 @@ function update() {
     }
   });
 
-
-
-  // postRequest("../controller/updateProfile.controller.php", {
-  //   firstName: document.getElementById("fname").value,
-  //   lastName: document.getElementById("lname").value,
-  //   email: document.getElementById("email").value,
-  //   username: document.getElementById("username").value,
-  //   password: document.getElementById("password").value
-  // },function fun(data) {
-  //   if (data == "success") {
-  //     // console.log("successssss");
-  //     window.location.replace("../controller/logout.controller.php");
-
-  //   } else {
-  //     console.log("failed");
-  //   }
-  // });
   
 
 }

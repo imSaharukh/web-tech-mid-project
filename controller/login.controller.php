@@ -29,11 +29,11 @@ function validate($data)
 }
 $isValidate = true;
 if ($username == "") {
-  echo "username is required <br>";
+  echo "username is required";
   $isValidate = false;
 }
 if ($password == "") {
-  echo "password is required <br>";
+  echo "password is required";
   $isValidate = false;
 }
 
@@ -50,25 +50,21 @@ if ($isValidate) {
     $result = $stmt->get_result();
     $isLogin = false;
     if ($result->num_rows > 0) {
-    // echo "Login Successful <br>";
 
     $user = $result->fetch_assoc();
 
 
-    // echo "<h1>successfully loggedin</h1> <br>";
+
     setcookie("user", json_encode($user), time() + (86400 * 30) , "/",); 
-    // var_dump($value);
     $_SESSION["username"] = $user['username'];
 
-
-    // header("location: ../view/admin.view.php");
     echo '{"status": "true", "message":""}';
 
 
     }else{
 
       echo '{"status": "false", "message":"username or password is incorrect"}';
-      // echo "username or password is incorrect";
+
     }
     $conn->close();
 
