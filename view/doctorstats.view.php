@@ -5,16 +5,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/table.css">
+    <link rel="stylesheet" href="./css/input.css">
     <title>Doctor Stats</title>
 </head>
 <body>
-<!-- <h1>[Doctor Stats]</h1> -->
+
 <?php include("navbar.componrnt.php") ?>
 
-<!-- <?php require("../controller/doctorstats.controller.php") ?> -->
 
-
-
+<div style= "padding-top: 20px;padding-bottom: 20px;"><input id = "search" class = "search by doctor name" style = "width: 100%;margin: auto;" type="text" name="search" placeholder="Search.."></div>
 
 <table class="styled-table">
     <thead>
@@ -35,6 +34,7 @@
     <?php include ('../view/footer.php'); ?>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="js/doctor.js"></script>
 <script>
     $.get("../controller/doctorstats.controller.php", function(data){
         console.log(data);
@@ -51,10 +51,23 @@
         </tr>
 
                 `)
-    });}
-    );
+    });
+});
 
 
+
+
+
+$("#search").keyup(function(){
+
+console.log($(this).val());
+
+searchDoctor($(this).val());
+
+
+}
+
+);
 </script>
 </body>
 </html>

@@ -5,11 +5,22 @@
  
 
         require("../model/db.php");
+
+        $sql = 'SELECT * from doctorstats;';
+        if (isset($_GET['q'])) {
+            
+            $sql = "SELECT * from doctorstats where doctorName LIKE '%$_GET[q]%';";
+        }
+
+
+
+
+
     
 
     
         //get feedback from database sql
-        $sql = 'SELECT * from doctorstats;';
+        
         $result = $conn->query($sql);
     
     

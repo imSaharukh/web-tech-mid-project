@@ -53,8 +53,7 @@
 
 <script>
 function update() {
-  //TODO validation
-  // console.log("update called");
+
 
   let message = "";
         var verified = true;
@@ -101,9 +100,6 @@ function update() {
       alart(data);
     }
   });
-
-  
-
 }
 
 </script>
