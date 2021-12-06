@@ -1,5 +1,6 @@
 <?php
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
+  require("../model/db.php");
 
     $password = $email = $repassword = "";
 
@@ -14,15 +15,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $repassword = sanitize($_POST["repassword"]?? "");
     $isValidate = true;
     if ($email == "") {
-    echo "email is required <br>";
+    echo "email is required";
     $isValidate = false;
     }
     if ($password == "") {
-    echo "password is required <br>";
+    echo "password is required";
     $isValidate = false;
     }
     if ($repassword == "") {
-    echo "repassword is required <br>";
+    echo "repassword is required";
     $isValidate = false;
     }
 
@@ -32,21 +33,31 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         echo "Password and Re-Password are not same";
         $isValidate = false;
     } 
-
-    $existingData = json_decode(file_get_contents("../model/admin.model.json",true),true);
-      $updated = false;
-    foreach($existingData as $feedback => $x){
-        if($x["email"] == $email) {
-            // echo "found";
-            $existingData[$feedback]["password"] = $password;
-            
-            $updated = true;
-            break;
+    if (isValidate) {
+    //update to database prepare statement
+    $sql = "UPDATE admin SET password = ? WHERE email = ?";
+    $stmt = $conn->prepare($sql);
+    $stmt->bind_param("ss", $password, $email);
+    $stmt->execute();
+    $stmt->close();
+    $conn->close();
+    echo "success";
     }
+
+//     $existingData = json_decode(file_get_contents("../model/admin.model.json",true),true);
+//       $updated = false;
+//     foreach($existingData as $feedback => $x){
+//         if($x["email"] == $email) {
+//             // echo "found";
+//             $existingData[$feedback]["password"] = $password;
+            
+//             $updated = true;
+//             break;
+//     }
 
  
 
-}
+// }
 
 
 // var_dump($existingData);
@@ -63,6 +74,6 @@ if($updated){
 
 }
   }else{
-    header("Location: ../../index.php");
+    throw new ErrorException("unknown request");
   }
 ?>
