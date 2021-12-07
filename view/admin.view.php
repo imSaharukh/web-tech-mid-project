@@ -28,7 +28,6 @@
   <label for="lname">Last name:</label><br>
   <input type="text" id="lname" name="lastName" value = '<?php echo $user->lastName;?>'><br>
 
-  <!-- <?php echo $username=  $user->username;?> -->
 
   <label for="lname">Email:</label><br>
   <input type="text" id="email" name="email" value = '<?php echo $user->email;?>' readonly><br>

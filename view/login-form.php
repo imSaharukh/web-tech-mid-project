@@ -21,7 +21,7 @@ if (isset($_SESSION["username"] )) {
 </head>
 <body id = "center">
 
-    <h1>Admin Login</h1>
+    <h1 style ="text-align: center;">Admin Login</h1>
 
  <div class = "inputDiv">       <label for="email">Username:</label><br>
         <input type="text" id="username" name="username" >
