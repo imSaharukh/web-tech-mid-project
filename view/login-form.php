@@ -42,13 +42,13 @@ if (isset($_SESSION["username"] )) {
         <br>
       <a href="forget-password.html">forgot password?</a>
 
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
     <script>
     function login() {
 
-
-        const username = document.getElementById('username').value;
-        const password = document.getElementById('password').value;
+        const username = $("#username").val();
+        const password = $("#password").val();
 
         let message = "";
         var verified = true;
@@ -66,10 +66,12 @@ if (isset($_SESSION["username"] )) {
         }
 
 
-        const xhttp = new XMLHttpRequest();
-        xhttp.onload = function() {
-           console.log(this.responseText);
-            const response = JSON.parse(this.responseText);
+var data = JSON.stringify({ "username": username, "password": password});
+
+        $.post("../controller/login.controller.php",data, function(response) {
+        //    console.log(this.responseText);
+             response = JSON.parse(response);
+            console.log(response);
 
             console.log(response["status"]);
            if (response["status"] == "true") {
@@ -78,10 +80,7 @@ if (isset($_SESSION["username"] )) {
            } else {
                 alert("username or password is incorrect");
            }
-        }
-        xhttp.open("POST", '../controller/login.controller.php');
-        xhttp.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-        xhttp.send(JSON.stringify({ "username": username, "password": password}));
+        });
     }
 </script>
 </body>

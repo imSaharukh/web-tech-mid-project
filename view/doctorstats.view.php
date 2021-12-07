@@ -13,7 +13,7 @@
 <?php include("navbar.componrnt.php") ?>
 
 
-<div style= "padding-top: 20px;padding-bottom: 20px;"><input id = "search" class = "search by doctor name" style = "width: 100%;margin: auto;" type="text" name="search" placeholder="Search.."></div>
+<div style= "padding-top: 20px;padding-bottom: 20px;"><input id = "search" class = "search by doctor name" style = "width: 100%;margin: auto;" type="text" name="search" placeholder="Search by doctor name.."></div>
 
 <table class="styled-table">
     <thead>
@@ -23,7 +23,6 @@
             <th>Last Year Revinue</th>
             <th>Last Mounth Revinue</th>
             <th>Total Visit</th>
-
         </tr>
     </thead>
     <tbody id ="tbody">
