@@ -5,22 +5,26 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Edit Doctor</title>
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/input.css">
+    <link rel="stylesheet" href="css/auth.css">
 </head>
 <body>
 
-<?php require("../controller/editdoctor.controller.php"); ?>
+<!-- <?php require("../controller/editdoctor.controller.php"); ?> -->
 
 <!-- <?php var_dump($admin); ?> -->
-<h1>[Update Doctor]</h1>
+<!-- <h1>[Update Doctor]</h1> -->
 
-<?php include("../view/navbar.componrnt.php"); ?>
+<!-- <?php include("../view/navbar.componrnt.php"); ?> -->
 
 <br>
 
 
-<form action="../controller/handeleditdoctor.controller.php" style="display: inline-block;" method="POST">
-        <fieldset>
-            <legend>Update Doctor</legend>
+<!-- <form action="../controller/handeleditdoctor.controller.php" style="display: inline-block;" method="POST"> -->
+        <!-- <fieldset> -->
+        <div class "inputDiv center" style="padding: 3% 30%;">
+<h1>Update Doctor</h1>
             <label for="firstName">First Name:</label>
             <input type="text" name="firstName" value = '<?php echo $doc["firstName"] ?>'  id="firstName"><br><br>
             <label for="lastName">Last Name:</label>
@@ -39,9 +43,10 @@
             <label for="fee">Fee: </label>
 
             <input type="fee" value = '<?php echo $doc["visitingFee"] ?>'  name="visitingFee" id="fee"><br>
-        </fieldset><br>
-        <input type="submit" value="Confirm">
-    </form>
+        <!-- </fieldset><br> -->
+        <button class = "button" onclick= "editAdmin();">Update</button>
+</div>
+    <!-- </form> -->
 
 
 
