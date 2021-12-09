@@ -5,115 +5,45 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Users</title>
+    <link rel="stylesheet" href="css/common.css">
 </head>
 <body>
-    <!-- <h1>[Users]</h1> -->
     <?php include("navbar.componrnt.php") ?>
-    <?php require("../controller/users.controller.php") ?>
     <br>
     <br>
-    <form action="../view/admin-form.php" method="post">
-        <input type="submit" value="Add New Admin">
-    </form>
+
     <hr>
-    <h2>ADMINs</h2>
+<h2 style = "text-align: center;">ADMIN</h2>
 
-    <form action="editadmin.view.php" method="post">
-    <?php
-    echo "<table border = 1>";
-    echo  '<th>Fist Name</th><th>Last Name</th> <th>username</th> <th>Email</th>';
-    foreach($adminData as $user) {
-        // echo "<form>";
-        echo "<tr>";
-        echo "<td>".$user['firstName']."</td>";
-        echo "<td>".$user['lastName']."</td>";
-        echo "<td>".$user['username']."</td>";
-        echo "<td>".$user['email']."</td>";
-        $email = $user['email'];
-        echo "<td> <button type='submit' value='$email' name='email'> edit</button> </td>";
-        echo "</tr>";
-        // echo "</form>";
-       
-    }
-    
-    echo "</table>";
-        ?>
-    </form>
+<div id = "admin"></div>
 
 
-    <form action="editdoctor.view.php" method="POST">
-    <h2>Doctors</h2>
-        <?php
-        echo "<table border = 1>";
-        echo  '<th>Fist Name</th><th>Last Name</th> <th>Email</th> <th>Age</th> <th>Degree</th> <th>Department</th> <th>Fee </th>';
-        foreach($doctorData as $doc) {
-            // echo "<form action='../view/editdoctor.view.php' method='post'>";
-            echo "<tr>";
-            echo "<td>".$doc['firstName']."</td>";
-            echo "<td>".$doc['lastName']."</td>";
-            echo "<td>".$doc['email']."</td>";
-            echo "<td>".$doc['age']."</td>";
-            echo "<td>".$doc['degree']."</td>";
-            echo "<td>".$doc['department']."</td>";
-            echo "<td>".$doc['visitingFee']."</td>";
-            $email = $doc['email'];
-            echo "<td> <button type='submit' value='$email' name='email'>  edit</button> </td>";
-            echo "</tr>";
-            // echo "</form>";
-        
-        }
-        
-        echo "</table>";
-            ?>
 
-</form>
 
-<h2>Shop Manager</h2>
-        <?php
-        echo "<table border = 1>";
-        echo  '<th>First Name</th><th>Last Name</th> <th>email</th><td>phone</th><td>address</td><td>licenseNumber</td>';
-        foreach($shopManagerData as $doc) {
-            echo "<form>";
-            echo "<tr>";
-            echo "<td>".$doc['firstName']."</td>";
-            echo "<td>".$doc['lastName']."</td>";
-            echo "<td>".$doc['email']."</td>";
-            echo "<td>".$doc['phone']."</td>";
-            echo "<td>".$doc['address']."</td>";
-            echo "<td>".$doc['licenseNumber']."</td>";
-            // $email = $doc['email'];
-            // echo "<td> <button type='submit' value='$email'> edit</button> </td>";
-            echo "</tr>";
-            echo "</form>";
-        
-        }
-        
-        echo "</table>";
-            ?>
-<h2>Patients</h2>
-        <?php
-        echo "<table border = 1>";
-        echo  '<th>First Name</th><th>Last Name</th> <th>email</th><td>Age</th><td>Gender</td><td>Address</th>';
-        foreach($patentData as $doc) {
-            echo "<form>";
-            echo "<tr>";
-            echo "<td>".$doc['firstName']."</td>";
-            echo "<td>".$doc['lastName']."</td>";
-            echo "<td>".$doc['email']."</td>";
-            echo "<td>".$doc['age']."</td>";
-            echo "<td>".$doc['gender']."</td>";
-            echo "<td>".$doc['address']."</td>";
-            // $email = $doc['email'];
-            // echo "<td> <button type='submit' value='$email'> edit</button> </td>";
-            echo "</tr>";
-            echo "</form>";
-        
-        }
-        
-        echo "</table>";
-            ?>
+
+<h2 style = "text-align: center;">DOCTORS</h2>
+
+<div id = "doctor"></div>
+
+
+<h2 style = "text-align: center;">SHOP MANAGER</h2>
+
+<div id = "shopmanager"></div>
+
+
+<h2 style = "text-align: center;">PATIENTS</h2>
+
+
+<div id = "patients"></div>
 
 
 <?php include ('../view/footer.php'); ?>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="js/manageuser.js"></script>
+
+
+
+
 </body>
 </html>

@@ -69,7 +69,6 @@ if (isset($_SESSION["username"] )) {
 var data = JSON.stringify({ "username": username, "password": password});
 
         $.post("../controller/login.controller.php",data, function(response) {
-        //    console.log(this.responseText);
              response = JSON.parse(response);
             console.log(response);
 

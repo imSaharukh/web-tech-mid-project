@@ -8,6 +8,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" and isset($_POST['email'])) {
     // $admins = json_decode($string, true);
 
 
+    
+
     $sql = "SELECT * FROM user where username = '" . $_POST['username'] . "'";
     $result = $conn->query($sql);
     if ($result->num_rows > 0) {
