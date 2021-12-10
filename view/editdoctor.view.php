@@ -21,10 +21,9 @@
 <br>
 
 
-<!-- <form action="../controller/handeleditdoctor.controller.php" style="display: inline-block;" method="POST"> -->
-        <!-- <fieldset> -->
-        <div class "inputDiv center" style="padding: 3% 30%;">
-<h1>Update Doctor</h1>
+
+<div class "inputDiv center" style="padding: 3% 30%;">
+    <h1>Update Doctor</h1>
             <label for="firstName">First Name:</label>
             <input type="text" name="firstName" value = '<?php echo $doc["firstName"] ?>'  id="firstName"><br><br>
             <label for="lastName">Last Name:</label>
@@ -43,10 +42,9 @@
             <label for="fee">Fee: </label>
 
             <input type="fee" value = '<?php echo $doc["visitingFee"] ?>'  name="visitingFee" id="fee"><br>
-        <!-- </fieldset><br> -->
         <button class = "button" onclick= "editAdmin();">Update</button>
 </div>
-    <!-- </form> -->
+
 
 
 

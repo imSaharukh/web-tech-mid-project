@@ -15,10 +15,15 @@
     <hr>
 <h2 style = "text-align: center;">ADMIN</h2>
 
+
+
 <div id = "admin"></div>
 
-
-
+<br>
+<br>
+<button class = 'button' onclick = 'addNewADMIN()'>ADD NEW ADMIN</button>
+<br>
+<br>
 
 
 <h2 style = "text-align: center;">DOCTORS</h2>

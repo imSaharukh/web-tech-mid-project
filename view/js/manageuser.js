@@ -151,3 +151,7 @@ function editAdmin() {
     }
   );
 }
+
+function addNewADMIN() {
+  window.location.href = "admin-form.php";
+}
