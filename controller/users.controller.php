@@ -40,7 +40,8 @@
             "degree" => $row["degree"],
             "visitingFee" => $row["visitingFee"],
             "department" => $row["department"],
-            "regnumber" => $row["regnumber"]
+            "regnumber" => $row["regnumber"],
+            "id" => $row["id"],
 
         );
         array_push($doctors, $doctor);
