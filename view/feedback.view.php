@@ -30,7 +30,7 @@
         $.each(data, function(index, value){
             $("#feedback").append(`
             <div class="container">
-            <img src="https://i.pravatar.cc/100" alt="Avatar" style="width:90px">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png" alt="Avatar" style="width:90px">
             <p><span>Doctor: ${value.doctorName}</span> Patient: ${value.patientName}</p>
             <p>Feedback: ${value.feedback}</p>
             <button style="display: flex;${value.checked == 1? 'background-color:red;' : ''}" ${value.checked == 1? 'disabled' : ''} class = "button" onclick="updateFeedback(${value.id});">Checked</button>

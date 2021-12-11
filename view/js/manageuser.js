@@ -6,7 +6,7 @@ $.get("../controller/users.controller.php", function name(data) {
   $.each(data[0].admins, function (i, value) {
     $("#admin").append(`
    <div class="container">
-           <img src="https://i.pravatar.cc/100" alt="Avatar" style="width:90px">
+           <img src="https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png" alt="Avatar" style="width:90px">
            <p><span>Name: ${value.firstName} ${value.lastName}</span> username: ${value.username}</p>
            <p>email: ${value.email}</p>
            <button style="display: flex;" class = "button" onclick="updateAdmin('${value.username}');">EDIT</button>
@@ -22,7 +22,7 @@ $.get("../controller/users.controller.php", function name(data) {
   $.each(data[1].doctors, function (i, value) {
     $("#doctor").append(`
    <div class="container">
-           <img src="https://i.pravatar.cc/100" alt="Avatar" style="width:90px">
+           <img src="https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png" alt="Avatar" style="width:90px">
            <p><span>Name: ${value.firstName} ${value.lastName}</span> department: ${value.department}</p>
            <p>REG: ${value.regnumber}</p>
            <button style="display: flex;" class = "button" onclick="updateDoctor('${value.id}');">EDIT</button>
@@ -40,7 +40,7 @@ $.get("../controller/users.controller.php", function name(data) {
   $.each(data[2].shopmanager, function (i, value) {
     $("#shopmanager").append(`
    <div class="container">
-           <img src="https://i.pravatar.cc/100" alt="Avatar" style="width:90px">
+           <img src="https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png" alt="Avatar" style="width:90px">
            <p><span>NAME: ${value.firstName} ${value.lastName}</span></p>
            <p>address: ${value.address}</p>
            <p>phone: ${value.phone}</p>
@@ -58,7 +58,7 @@ $.get("../controller/users.controller.php", function name(data) {
   $.each(data[3].patients, function (i, value) {
     $("#patients").append(`
    <div class="container">
-           <img src="https://i.pravatar.cc/100" alt="Avatar" style="width:90px">
+           <img src="https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png" alt="Avatar" style="width:90px">
            <p><span>NAME: ${value.firstName}</span> age: ${value.age}</p>
            <p>address: ${value.address}</p>
            <p>phone: ${value.phone}</p>
